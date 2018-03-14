@@ -49,7 +49,7 @@ module GPX
         @speed = opts[:speed]
         @extensions = opts[:extensions]
       end
-
+      @elevation = 0 if @elevation.nil?
     end
 
 
