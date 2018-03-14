@@ -44,9 +44,11 @@ module GPX
         @comment = (trk_element.at('cmt').inner_text rescue '')
         @description = (trk_element.at('desc').inner_text rescue '')
         trk_element.search("trkseg").each do |seg_element|
-          seg = Segment.new(:element => seg_element, :track => self, :gpx_file => @gpx_file)
-          update_meta_data(seg)
-          @segments << seg
+          unless seg_element.element_children.nil? || seg_element.element_children.length == 0
+            seg = Segment.new(:element => seg_element, :track => self, :gpx_file => @gpx_file)
+            update_meta_data(seg)
+            @segments << seg
+          end
         end
       end
     end
