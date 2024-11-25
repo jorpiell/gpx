@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary = %q{A basic API for reading and writing GPX files.}
   s.description = %q{A basic API for reading and writing GPX files.}
 
-  s.required_ruby_version = '~>2.1'
+  s.required_ruby_version = '~>3.0'
 
   s.files = `git ls-files`.split($/)
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
